@@ -5,34 +5,48 @@
     html, body {
       margin: 0;
       padding: 0;
-      overflow: hidden;
       background: black;
       height: 100%;
       width: 100%;
+    }
+    #start {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      border: none;
+      z-index: 1000;
+      cursor: pointer;
     }
     video {
       position: fixed;
       top: 0;
       left: 0;
-      height: 100vh;
       width: 100vw;
+      height: 100vh;
       object-fit: cover;
       z-index: 999;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <video id="jumpscare" autoplay loop playsinline>
+  <button id="start"></button>
+  <video id="jumpscare" loop>
     <source src="https://cdn.videy.co/ekyZiB6F1.mp4" type="video/mp4">
   </video>
+
   <script>
+    const btn = document.getElementById('start')
     const vid = document.getElementById('jumpscare')
-    vid.muted = false
-    vid.play().catch(() => {
-      document.body.addEventListener('click', () => {
-        vid.play()
-      }, { once: true })
-    })
+
+    btn.onclick = () => {
+      btn.style.display = 'none'
+      vid.style.display = 'block'
+      vid.play()
+    }
   </script>
 </body>
 </html>
