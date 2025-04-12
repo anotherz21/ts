@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jumpscare Full Sound</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+    }
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay loop playsinline id="jumpscare">
+    <source src="https://cdn.videy.co/ekyZiB6F1.mp4" type="video/mp4">
+  </video>
+
+  <script>
+    const video = document.getElementById('jumpscare')
+    video.muted = false
+    video.play()
+  </script>
+</body>
+</html>
